@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>check browser</title>
+    <link rel="stylesheet" href="libary/bootstrap/bootstrap.min.css">
+<!--<link rel="stylesheet" href="libary/bootstrap/bootstrap.min.css">-->
+</head>
+<body>
+<center>
+    <button type="button" id="browser" class="btn btn-primary"></button>
+    <button type="button" id="cookies" class="btn btn-danger"></button>
+    <button type="button" id="lang" class="btn btn-success"></button>
+</center>
+<script>
+   var x=document.getElementById("browser");
+   if (navigator.cookieEnabled){
+       document.getElementById("cookies").textContent="cookies Enabled";
+   }
+   else{
+       document.getElementById("cookies").textContent="cookies Disabled";
+
+   }
+   document.getElementById("lang").textContent=navigator.language;
+    console.log("languages",navigator.languages);
+    console.log("languages",navigator.connection);
+    if (navigator.userAgent.indexOf("Chrome")>-1){
+        x.textContent="Chrome";
+    }
+    else if (navigator.userAgent.indexOf("Firefox")>-1){
+        x.textContent="Firefox";
+    }
+   else if (navigator.userAgent.indexOf("Safari")>-1){
+        x.textContent="Safari";
+    }
+</script>
+</body>
+</html>
